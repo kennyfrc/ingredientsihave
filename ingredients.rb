@@ -64,4 +64,4 @@ end
 response = HTTParty.get(url + "?ingredients=corned beef" + key_param + API_KEY, format: :plain)
 requests = response.headers["x-api-quota-used".to_sym].to_i
 puts requests
-requests < 400 ? within_quota(key_query, API_KEY) : not_within_quota()
+requests < 600 ? within_quota(key_query, API_KEY) : not_within_quota()
