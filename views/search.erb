@@ -15,19 +15,24 @@
     <!-- Tracking Code -->
   </head>
   <body>
-    <h1> <%= "Recipe Search for #{@ingredients.titleize} " %> </h1>
-    <form method="POST" action="/search">
-      <p>Search more recipes (use comma to separate ingredients): <input type="text" name="ingredients"><input type="submit"></p>
-    </form>
-    <% if @titles.empty? %> 
-      <p> No results. Check your spelling or use a different set of ingredients. </p>
-    <% else %>
-      <% @titles.each_with_index do |title, idx| %> 
-        <h3><%= "#{idx + 1}. #{title.titleize}"  %></h3>
-        <img src="<%= @images[idx] %>"></p>
-        <p>Additional Ingredients Needed: <%= @ings[idx] ? @ings[idx].titleize : "None"  %></p>
-        <p>Link to recipe: <a href="<%= @urls[idx] %>">Recipe Link for <%= title.titleize %> </a></p>
+      <div>
+        <a class="color-gray-light"  href="mailto:marketing@askmonolith.com?Subject=Uulan%20Ba?%20Feedback">Contact Us</a>
+      </div>
+    <div>
+      <h1> <%= "Recipe Search for #{@ingredients.titleize} " %> </h1>
+      <form method="POST" action="/search">
+        <p>Search more recipes (use comma to separate ingredients): <input type="text" name="ingredients"><input type="submit"></p>
+      </form>
+      <% if @titles.empty? %> 
+        <p> No results. Check your spelling or use a different set of ingredients. </p>
+      <% else %>
+        <% @titles.each_with_index do |title, idx| %> 
+          <h3><%= "#{idx + 1}. #{title.titleize}"  %></h3>
+          <img src="<%= @images[idx] %>"></p>
+          <p>Additional Ingredients Needed: <%= @ings[idx] ? @ings[idx].titleize : "None"  %></p>
+          <p>Link to recipe: <a href="<%= @urls[idx] %>">Recipe Link for <%= title.titleize %> </a></p>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </body>
 </html>
