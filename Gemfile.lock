@@ -8,6 +8,7 @@ GEM
       tzinfo (~> 1.1)
       zeitwerk (~> 2.1, >= 2.1.8)
     concurrent-ruby (1.1.5)
+    dotenv (2.7.5)
     httparty (0.17.1)
       mime-types (~> 3.0)
       multi_xml (>= 0.5.2)
@@ -38,6 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   activesupport
+  dotenv
   httparty
   sinatra
 
