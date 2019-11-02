@@ -1,8 +1,10 @@
 require 'httparty'
 require 'sinatra'
 require 'active_support/core_ext'
+require 'dotenv'
+Dotenv.load('.env')
 
-API_KEY = "b2abbd8118cf44299b6289fc84ad0553"
+API_KEY = ENV['API_KEY']
 
 url = "https://api.spoonacular.com/recipes/findByIngredients"
 endpoint = "?ingredients="
